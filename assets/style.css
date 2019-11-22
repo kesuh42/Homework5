@@ -1,3 +1,30 @@
 header {
     text-align: center;
 }
+
+.schedulerow {
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    margin-bottom: 2px;
+    border: gray solid 2px;
+}
+
+.time {
+    height: 100px;
+    width: calc(10% - 2px);
+    float: left;
+    border-right: grey solid 2px;
+}
+
+.event {
+    height: 100px;
+    width: 80%;
+    float: left;
+}
+
+.save {
+    height: 100px;
+    width: 10%;
+    float: left;
+}

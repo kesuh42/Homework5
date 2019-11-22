@@ -2,6 +2,10 @@ var timeSlotsArray = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM",
 var eventsArray = ["", "", "", "", "", "", "", "", ""]
 var scheduleEl = $("#schedule")
 
+if (localStorage.getItem("eventsArray")) {
+    eventsArray = JSON.parse(localStorage.getItem("eventsArray"))
+}
+
 
 function renderSchedule() {
     for (var i = 0; i< 9; i++) {
@@ -11,7 +15,7 @@ function renderSchedule() {
         timeDiv.text(timeSlotsArray[i])
         newRow.append(timeDiv)
 
-        var eventDiv = $("<div>").addClass("event")
+        var eventDiv = $("<textarea>").addClass("event").attr("id", timeSlotsArray[i] + "event")
         eventDiv.text(eventsArray[i])
         newRow.append(eventDiv)
 
@@ -27,5 +31,12 @@ function renderSchedule() {
 renderSchedule()
 
 function updateEvents() {
-    
+    if (event.target.getAttribute("class") === "save") {
+        for (var i = 0; i< 9; i++) {
+            eventsArray[i] = $("#" + timeSlotsArray[i] + "event").val()
+            localStorage.setItem("eventsArray", JSON.stringify(eventsArray))
+        }
+    }
 }
+
+scheduleEl.click(updateEvents)

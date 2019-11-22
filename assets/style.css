@@ -2,6 +2,15 @@ header {
     text-align: center;
 }
 
+textarea {
+    border: 0px;
+    margin: 0px;
+    padding: 0px 10px;
+    font-family: inherit;
+    font-size: inherit;
+    resize: none;
+}
+
 .schedulerow {
     width: 80%;
     height: 100px;
@@ -12,7 +21,7 @@ header {
 
 .time {
     height: 100px;
-    width: calc(10% - 2px);
+    width: calc(10% - 22px);
     float: left;
     border-right: grey solid 2px;
 }

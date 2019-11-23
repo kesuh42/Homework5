@@ -1,4 +1,4 @@
-var timeSlotsArray = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"]
+var timeSlotsArray = ["09AM", "10AM", "11AM", "12PM", "01PM", "02PM", "03PM", "04PM", "05PM"]
 var eventsArray = ["", "", "", "", "", "", "", "", ""]
 var scheduleEl = $("#schedule")
 var time = moment().format("LT")

@@ -29,11 +29,13 @@ function renderSchedule() {
         if (timeArray[i] === currentHour) {
             eventDiv.css("background-color", "red")
         }
-        else if (timeArray.indexOf(currentHour) > i) {
-            eventDiv.css("background-color", "gray")
+        else if ((timeArray.indexOf(currentHour) < i && (timeArray.includes(currentHour))) || (parseInt(currentHour) < 9)) {
+            eventDiv.css("background-color", "green")
         }
         else {
-            eventDiv.css("background-color", "green")
+            eventDiv.css("background-color", "gray")
+            console.log(currentHour)
+            console.log(timeArray[i])
         }
 
         var saveButton = $("<button>").addClass("save").attr("id", timeSlotsArray[i] + "save")

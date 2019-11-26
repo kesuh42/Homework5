@@ -34,8 +34,6 @@ function renderSchedule() {
         }
         else {
             eventDiv.css("background-color", "gray")
-            console.log(currentHour)
-            console.log(timeArray[i])
         }
 
         var saveButton = $("<button>").addClass("save").attr("id", timeSlotsArray[i] + "save")

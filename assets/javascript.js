@@ -2,7 +2,9 @@ var timeSlotsArray = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM",
 var timeArray = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 var eventsArray = ["", "", "", "", "", "", "", "", ""]
 var scheduleEl = $("#schedule")
+var dateEL = $("#date")
 var currentHour = moment().format("HH")
+var currentDate = moment().format('dddd MMMM Do YYYY')
 
 //Pull the events from local storage if present
 if (localStorage.getItem("eventsArray")) {
@@ -11,6 +13,9 @@ if (localStorage.getItem("eventsArray")) {
 
 //Render the schedule
 function renderSchedule() {
+    //Adding the date to the header
+    dateEL.text(currentDate)
+    
     //Making a schedule row for every element of timeSlotsArray
     for (var i = 0; i< 9; i++) {
         var newRow = $("<div>").addClass("schedulerow").attr("id", timeSlotsArray[i])
